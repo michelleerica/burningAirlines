@@ -21,9 +21,9 @@ f4 = Flight.create name: 23, date: "2017-06-11", departure: "SFO", arrival: "NYC
 
 User.destroy_all
 
-u1 = User.create firstname: "Michelle", surname: "Lo", password: "chicken", is_admin: true
-u2 = User.create firstname: "Max", surname: "Bausher", password: "chicken", is_admin: false
-u3 = User.create firstname: "Ryan", surname: "Ruan", password: "chicken", is_admin: false
+u1 = User.create firstname: "Michelle", surname: "Lo", password: "chicken", is_admin: true, email: "mlo@gmail.com"
+u2 = User.create firstname: "Max", surname: "Bausher", password: "chicken", is_admin: false, email: "maxbausher@gmail.com"
+u3 = User.create firstname: "Ryan", surname: "Ruan", password: "chicken", is_admin: false, email: "rruan@gmail.com"
 
 Reservation.destroy_all
 
