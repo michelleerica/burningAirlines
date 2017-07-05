@@ -10,26 +10,41 @@
        <h1>Virgin Airlines</h1>
        <button id="searchFlights">Search Flights</button>
 
-       <div id="flightsTable">
-           <table>
+       <div id="searchForm"></div>
+
+       <div id="detailsContainer">
+           <table id="flightsTable">
                <tr>
-               <td>{{ date }}</td>
-               <td>{{ name }}</td>
-               <td>{{ departure }} > {{ arrival }}</td>
-               <td>Airplane Name</td>
+                   <td>Date</td>
+                   <td>Flight</td>
+                   <td>From > To</td>
+                   <td>Plane</td>
                </tr>
            </table>
        </div>
     </div>
 </script>
 
+<script type="html/template" id="SearchInputViewTemplate">
+
+    <div>
+         <input id="fromInput" type="text" placeholder="from"/>
+         <input id="toInput" type="text" placeholder="to"/>
+         <button id="cancel">Cancel</button>
+         <button id="search">Search</button>
+    </div>
+
+</script>
+
 <script type="html/template" id="FlightsViewTemplate">
 
         <tr>
-        <td>{{ date }}</td>
-        <td>{{ name }}</td>
-        <td>{{ departure }} > {{ arrival }}</td>
-        <td>Airplane Name</td>
+            <td>{{ date }}</td>
+            <td><a href="#">{{ name }}</a></td>
+            <td>{{ departure }} > {{ arrival }}</td>
+            <td>Airplane Name</td>
         </tr>
 
 </script>
+
+<script type="html/template" id="seatingChart"></script>
