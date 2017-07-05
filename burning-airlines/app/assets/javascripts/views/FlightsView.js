@@ -12,6 +12,7 @@ app.FlightsView = Backbone.View.extend({
     showPage: function(){
         var flightID = this.model.get('id');
         console.log(flightID);
+        app.router.navigate("/flights/" + flightID, true);
 
     },
     render: function(){
