@@ -8,10 +8,9 @@ app.FlightsView = Backbone.View.extend({
         "click a":"showPage"
     },
 
-    showPage: function(){
-        var flightID = this.model.id;
+    showPage: function(ev){
+        var flightID = ev;
         console.log(flightID);
-        debugger;
     },
     render: function(){
         var rawTemplate = $('#FlightsViewTemplate').html();
