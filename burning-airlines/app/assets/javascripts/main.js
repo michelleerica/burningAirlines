@@ -12,7 +12,7 @@ app.flights = new app.Flights();
 app.users = new app.Users();
 app.reservations = new app.Reservations();
 
-// app.router = new app.AppRouter();
+app.router = new app.AppRouter();
 
 $(document).ready(function() {
 

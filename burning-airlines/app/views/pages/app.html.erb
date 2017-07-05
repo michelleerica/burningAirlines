@@ -1,2 +1,35 @@
-<h1>Pages#app</h1>
-<p>Find me in app/views/pages/app.html.erb</p>
+
+<div id="app"></div>
+
+<script type="html/template" id="AppViewTemplate">
+    <div id="appView">
+       <nav>
+         <a href="#" id="search">Search</a>
+         <a href="#" id="userName">Username</a>
+       </nav>
+       <h1>Virgin Airlines</h1>
+       <button id="searchFlights">Search Flights</button>
+
+       <div id="flightsTable">
+           <table>
+               <tr>
+               <td>{{ date }}</td>
+               <td>{{ name }}</td>
+               <td>{{ departure }} > {{ arrival }}</td>
+               <td>Airplane Name</td>
+               </tr>
+           </table>
+       </div>
+    </div>
+</script>
+
+<script type="html/template" id="FlightsViewTemplate">
+
+        <tr>
+        <td>{{ date }}</td>
+        <td>{{ name }}</td>
+        <td>{{ departure }} > {{ arrival }}</td>
+        <td>Airplane Name</td>
+        </tr>
+
+</script>
