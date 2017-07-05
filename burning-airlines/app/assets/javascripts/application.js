@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require underscore.js
 //= require backbone.js
+//= require materialize.js
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views

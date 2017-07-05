@@ -2,22 +2,26 @@
 var app = app || {};
 
 app.FlightsView = Backbone.View.extend({
-    el: "#flightsTable",
+    // el: "#flightsTable",
+    tagName: "tr",
 
     events: {
-        "click a":"showPage"
+        "click": "showPage"
     },
 
-    showPage: function(ev){
-        var flightID = ev;
-        console.log(flightID);
+    showPage: function(){
+        var flightID = this.model.get('id');
+        console.log("/flights/" + flightID);
+        app.router.navigate("/flights/" + flightID, true);
+
     },
     render: function(){
         var rawTemplate = $('#FlightsViewTemplate').html();
         var template = _.template( rawTemplate );
 
         var markup = template( this.model.attributes );
-        this.$el.append( markup );
+        this.$el.html( markup );
+        this.$el.appendTo('#flightsTable');
         console.log(markup);
         // debugger;
     }

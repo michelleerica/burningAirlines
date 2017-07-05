@@ -1,52 +1,57 @@
+<div class="container">
 
-<div id="app"></div>
+  <div id="app"></div>
 
-<script type="html/template" id="AppViewTemplate">
-    <div id="appView">
-       <nav>
-         <a href="#" id="search">Search</a>
-         <a href="#" id="userName">Username</a>
-       </nav>
-       <h1>Virgin Airlines</h1>
-       <button id="searchFlights">Search Flights</button>
-       <div id="detailsContainer">
-           <div id="searchForm"></div>
+  <script type="html/template" id="AppViewTemplate">
+      <div id="appView">
+        <div class="nav-wrapper">
 
-           <table id="flightsTable">
-               <tr>
-                   <td>Date</td>
-                   <td>Flight</td>
-                   <td>From > To</td>
-                   <td>Plane</td>
-               </tr>
-           </table>
+          <nav>
+            <h1 class="brand-logo">GA Airlines</h1>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="#" id="search">Search</a></li>
+              <li><a href="#" id="userName">Username</a></li>
+            </ul>
+          </nav>
         </div>
-    </div>
-    </script>
 
-    <script type="html/template" id="SearchInputViewTemplate">
+         <h1>Virgin Airlines</h1>
+         <button id="searchFlights">Search Flights</button>
+         <div id="detailsContainer">
+             <div id="searchForm"></div>
 
-        <div>
-             <input id="fromInput" type="text" placeholder="from"/>
-             <input id="toInput" type="text" placeholder="to"/>
-             <button id="cancel">Cancel</button>
-             <button id="search">Search</button>
-    </div>
+             <table id="flightsTable", class="highlight">
+                 <thead>
+                     <th>Date</th>
+                     <th>Flight</th>
+                     <th>From > To</th>
+                     <th>Plane</th>
+                 </thead>
+             </table>
+          </div>
+      </div>
+      </script>
 
-</script>
+      <script type="html/template" id="SearchInputViewTemplate">
 
-<script type="html/template" id="FlightsViewTemplate">
+          <div>
+               <input id="fromInput" type="text" placeholder="from"/>
+               <input id="toInput" type="text" placeholder="to"/>
+               <button id="cancel">Cancel</button>
+               <button id="search">Search</button>
+      </div>
 
-        <tr>
-            <td>{{ date }}</td>
-            <td><a href="#">{{ name }}</a></td>
-            <td>{{ departure }} > {{ arrival }}</td>
-            <td></td>
-        </tr>
+  </script>
 
-</script>
+  <script type="html/template" id="FlightsViewTemplate">
+              <td>{{ date }}</td>
+              <td><a href="#">{{ name }}</a></td>
+              <td>{{ departure }} > {{ arrival }}</td>
+              <td></td>
+  </script>
 
-<script type="html/template" id="seatingChart">
-    <h2>{{ date }} Flight {{ name }} {{ departure }} > {{ arrival }}</h2>
+  <script type="html/template" id="seatingChart">
+      <h2>{{ date }} Flight {{ name }} {{ departure }} > {{ arrival }}</h2>
 
-</script>
+  </script>
+</div>
