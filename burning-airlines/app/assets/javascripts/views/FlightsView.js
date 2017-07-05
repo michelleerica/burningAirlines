@@ -20,6 +20,7 @@ app.FlightsView = Backbone.View.extend({
         var template = _.template( rawTemplate );
 
         var markup = template( this.model.attributes );
+        // debugger;
         this.$el.html( markup );
         this.$el.appendTo('#flightsTable');
         console.log(markup);
