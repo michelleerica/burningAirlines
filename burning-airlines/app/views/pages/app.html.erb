@@ -9,10 +9,9 @@
        </nav>
        <h1>Virgin Airlines</h1>
        <button id="searchFlights">Search Flights</button>
-
-       <div id="searchForm"></div>
-
        <div id="detailsContainer">
+           <div id="searchForm"></div>
+
            <table id="flightsTable">
                <tr>
                    <td>Date</td>
@@ -21,17 +20,17 @@
                    <td>Plane</td>
                </tr>
            </table>
-       </div>
+        </div>
     </div>
-</script>
+    </script>
 
-<script type="html/template" id="SearchInputViewTemplate">
+    <script type="html/template" id="SearchInputViewTemplate">
 
-    <div>
-         <input id="fromInput" type="text" placeholder="from"/>
-         <input id="toInput" type="text" placeholder="to"/>
-         <button id="cancel">Cancel</button>
-         <button id="search">Search</button>
+        <div>
+             <input id="fromInput" type="text" placeholder="from"/>
+             <input id="toInput" type="text" placeholder="to"/>
+             <button id="cancel">Cancel</button>
+             <button id="search">Search</button>
     </div>
 
 </script>
@@ -42,9 +41,12 @@
             <td>{{ date }}</td>
             <td><a href="#">{{ name }}</a></td>
             <td>{{ departure }} > {{ arrival }}</td>
-            <td>Airplane Name</td>
+            <td></td>
         </tr>
 
 </script>
 
-<script type="html/template" id="seatingChart"></script>
+<script type="html/template" id="seatingChart">
+    <h2>{{ date }} Flight {{ name }} {{ departure }} > {{ arrival }}</h2>
+
+</script>
