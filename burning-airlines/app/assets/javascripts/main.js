@@ -12,7 +12,7 @@ app.flights = new app.Flights();
 app.users = new app.Users();
 app.reservations = new app.Reservations();
 
-// app.router = new app.AppRouter();
+app.router = new app.AppRouter();
 
 $(document).ready(function() {
 
@@ -23,11 +23,13 @@ $(document).ready(function() {
     app.users.fetch();
     app.reservations.fetch();
 
+
+
     // Check for new secrets on this server every 2s
     // (they will be automatically rendered thanks to our
     // collection's add event handler)
     // window.setInterval(function(){
-    //     app.secrets.fetch();
+    //     app.flights.fetch();
     // }, 2000);
 
 }); // doc ready()
