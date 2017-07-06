@@ -9,8 +9,8 @@
 
 Airplane.destroy_all
 
-a1 = Airplane.create row: 12, column: 2, name: "747"
-a2 = Airplane.create row: 24, column: 4, name: "Sesna"
+a1 = Airplane.create row: 12, column: 2, name: "G5"
+a2 = Airplane.create row: 24, column: 4, name: "747"
 
 Flight.destroy_all
 
@@ -27,12 +27,12 @@ u3 = User.create firstname: "Ryan", surname: "Ruan", password: "chicken", is_adm
 
 Reservation.destroy_all
 
-r1 = Reservation.create seat_row: 3, seat_column: 1, occupied: true
-r2 = Reservation.create seat_row: 6, seat_column: 1, occupied: true
-r3 = Reservation.create seat_row: 9, seat_column: 2, occupied: true
-r4 = Reservation.create seat_row: 12, seat_column: 2, occupied: true
-r5 = Reservation.create seat_row: 15, seat_column: 3, occupied: true
-r6 = Reservation.create seat_row: 18, seat_column: 4, occupied: true
+r1 = Reservation.create seat_num: "1A", occupied: true
+r2 = Reservation.create seat_num: "2B", occupied: true
+r3 = Reservation.create seat_num: "3A", occupied: true
+r4 = Reservation.create seat_num: "4B", occupied: true
+r5 = Reservation.create seat_num: "5A", occupied: true
+r6 = Reservation.create seat_num: "6B", occupied: true
 
 a1.flights << f1 << f2
 a2.flights << f3 << f4
