@@ -18,21 +18,31 @@ app.SeatingChartView = Backbone.View.extend({
         var $seatTable = $('<table class="seatTable teal lighten-2"/>');
         console.log('$seatTable start:', $seatTable);
         _.each(rows, function(num){
+
             var $row = $("<tr>").css({
                 'border' : "1px solid black",
                 'background-color' : "white",
-                'border-spacing' : "10px",
+                "border-collapse": "separate",
+                'border-spacing' : "20px""20px",
+                "width" : "25px",
+                "height" : "25px",
         });
             $row.appendTo($seatTable);
             _.each(columns, function(n){
-                var $column = $('<td >').attr('row_no', num).attr('column_no', letters[n-1]).css('border',"1px solid black");
+                var $column = $('<td >').attr('row_no', num).attr('column_no', letters[n-1])
+                .css({
+                  'border':"1px solid black",
+                  'background-color' : "yellow",
+                  "border-collapse": "separate",
+                  'border-spacing' : "20px""20px",
+                  "width" : "25px",
+                  "height" : "25px",
+                });
                 $column.appendTo($row);
             });
         });
-        // debugger;
         this.$el.html( $seatTable );
 
-        // this.$el.html("HELLO");
 
 
     },
