@@ -29,7 +29,8 @@ app.SeatingChartView = Backbone.View.extend({
             var $row = $("<tr>");
             $row.appendTo($seatTable);
             _.each(columns, function(n){
-                var $column = $('<td >').attr('row_no', num).attr('column_no', letters[n-1])
+                var seat_no = num + letters[n-1];
+                var $column = $('<td>').attr('seat_no', seat_no).text(seat_no)
                 .css({
                   'border':"1px solid red",
                   'background-color' : "yellow",
@@ -43,9 +44,20 @@ app.SeatingChartView = Backbone.View.extend({
                 $column.appendTo($row);
             });
         });
-        this.$el.html( $seatTable );
+        this.$el.html( markup );
+        this.$el.append( $seatTable );
+
+        $(document).on('click', 'td', function(){
+        //  if ( $(this).hasClass('reserved') ) {
+        //    return;
+        //  }
+         $('td').not(this).removeClass('selected').css("background-color", "yellow");
+         $(this).toggleClass('selected').css("background-color","grey");
 
 
+        //  valueToSave.seat_no = $(this).attr('seat_no');
+        //  console.log("Current Seat: " + valueToSave.seat_no);
+        });
 
     },
 
