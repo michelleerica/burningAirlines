@@ -13,6 +13,14 @@ app.SearchInputView = Backbone.View.extend({
         var userInputDest = this.$el.find('#fromInput').val();
         var userInputArr = this.$el.find('#toInput').val();
         console.log(userInputDest, userInputArr);
+        var searchMatches = app.flights.where({departure: userInputDest, arrival: userInputArr});
+        $('td').remove();
+        _.each( searchMatches, function( flight ){
+            var sflv = new app.FlightsView({
+                model: flight
+            });
+            sflv.render();
+        });
     },
 
     cancelSearch: function(){

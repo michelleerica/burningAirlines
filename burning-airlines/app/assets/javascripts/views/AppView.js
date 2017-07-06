@@ -3,6 +3,10 @@ var app = app || {};
 app.AppView = Backbone.View.extend({
     el: "#app",
 
+    events: {
+        "click #searchFlights": "backToRoot"
+    },
+
     render: function(){
 
     var template = $("#AppViewTemplate").html();
@@ -20,4 +24,9 @@ app.AppView = Backbone.View.extend({
     }); // each
 
     },
+
+    backToRoot: function(){
+        app.router.navigate('search', true);
+
+    }
 });
