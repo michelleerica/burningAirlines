@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
 
     respond_to do |format|
     format.html {}
-    format.json { render json: @flights, :include => :airplane }
+    format.json { render json: @flights, :include => [:airplane, :reservations] }
     end
 
   end

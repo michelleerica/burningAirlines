@@ -48,11 +48,18 @@ app.SeatingChartView = Backbone.View.extend({
         this.$el.append( $seatTable );
 
         $(document).on('click', 'td', function(){
-        //  if ( $(this).hasClass('reserved') ) {
+        var selectedSeat = app.flights.fetch();
+        _.each(selectedSeat.responseJSON, function(num){
+    	       _.each(num.reservations, function(reservation){
+                   console.log( "seat num:", reservation.seat_num);
+               });
+        });
+            console.log(selectedSeat);
+        //  if ( $(this).text() === ) ) {
         //    return;
         //  }
          $('td').not(this).removeClass('selected').css("background-color", "yellow");
-         $(this).toggleClass('selected').css("background-color","grey");
+         $(this).toggleClass('selected').css("background-color","green");
 
 
         //  valueToSave.seat_no = $(this).attr('seat_no');
