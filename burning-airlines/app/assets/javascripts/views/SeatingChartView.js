@@ -15,28 +15,30 @@ app.SeatingChartView = Backbone.View.extend({
         var rows = _.range(1, rowTotal+1);
         var columns = _.range(1, colTotal+1);
         var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        var $seatTable = $('<table class="seatTable teal lighten-2"/>');
+        var $seatTable = $('<table class="seatTable"/>').css({
+            'background-color' : "white",
+            "border-collapse": "separate",
+            'border-spacing' : "40px",
+            'border':"1px solid black",
+            "max-width" :"600px",
+
+    });
         console.log('$seatTable start:', $seatTable);
         _.each(rows, function(num){
 
-            var $row = $("<tr>").css({
-                'border' : "1px solid black",
-                'background-color' : "white",
-                "border-collapse": "separate",
-                'border-spacing' : "20px""20px",
-                "width" : "25px",
-                "height" : "25px",
-        });
+            var $row = $("<tr>");
             $row.appendTo($seatTable);
             _.each(columns, function(n){
                 var $column = $('<td >').attr('row_no', num).attr('column_no', letters[n-1])
                 .css({
-                  'border':"1px solid black",
+                  'border':"1px solid red",
                   'background-color' : "yellow",
                   "border-collapse": "separate",
-                  'border-spacing' : "20px""20px",
-                  "width" : "25px",
-                  "height" : "25px",
+                  'border-spacing' : "20px",
+                  "width" : "40px",
+                  "height" : "50px",
+                  "border-radius":"40px",
+
                 });
                 $column.appendTo($row);
             });
