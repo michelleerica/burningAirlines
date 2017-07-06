@@ -6,7 +6,6 @@ app.SeatingChartView = Backbone.View.extend({
 
     render: function(){
         // console.log('this.model', this.model);
-
         var rawTemplate = $('#seatingChart').html();
         var template = _.template( rawTemplate );
         var markup = template( this.model.attributes );
@@ -22,7 +21,7 @@ app.SeatingChartView = Backbone.View.extend({
             'border':"1px solid black",
             "max-width" :"600px",
 
-    });
+          });
         console.log('$seatTable start:', $seatTable);
         _.each(rows, function(num){
 
@@ -39,7 +38,10 @@ app.SeatingChartView = Backbone.View.extend({
                   "width" : "40px",
                   "height" : "50px",
                   "border-radius":"40px",
-
+                  "border-radius":"40px",
+                  "font-family": "serif",
+                  "text-align":"center",
+                  "font-size":"30px"
                 });
                 $column.appendTo($row);
             });
@@ -47,14 +49,43 @@ app.SeatingChartView = Backbone.View.extend({
         this.$el.html( markup );
         this.$el.append( $seatTable );
 
+        // Array of seats occupied
+        var seatsOccupiedArray = [];
+        var seatsOccupied = _.each(this.model.attributes.reservations, function(num){
+          seatsOccupiedArray.push(num.seat_num);
+        })
+          console.log(seatsOccupiedArray);
+
+          // if ($('td').eq(0).html() === seatsOccupiedArray[0]){
+          //   $('td').eq(0).css("background-color","grey");
+          // };
+          // debugger;
+          //NOT WORKING ----- loop identifying which td's have coordinates which match the seatsOccupiedArray
+              // -> $('td').eq.length only equals 1/////
+              // css is sometimes changing, but it switches back due to line 89 in on click (toggle function)
+          console.log($('td').eq.length);
+          for (var i = 0; i < $('td').eq.length; i++) {
+            console.log(i);
+            for (var j = 0; j < seatsOccupiedArray.length; j++) {
+              console.log($('td').eq(i).text(),$('td').eq(i).html(), seatsOccupiedArray[j]);
+              if ($('td').eq(i).text() === seatsOccupiedArray[j]) {
+                $('td').eq(i).css("background-color","grey").off('click')
+              };
+            };
+          };
+
         $(document).on('click', 'td', function(){
-        var selectedSeat = app.flights.fetch();
-        _.each(selectedSeat.responseJSON, function(num){
-    	       _.each(num.reservations, function(reservation){
-                   console.log( "seat num:", reservation.seat_num);
-               });
-        });
-            console.log(selectedSeat);
+          //
+          // if ($(this).css("background-color","grey")){
+          //   return;
+          // }
+        // var selectedSeat = app.flights.fetch();
+        // _.each(selectedSeat.responseJSON, function(num){
+    	  //      _.each(num.reservations, function(reservation){
+        //            console.log( "seat num:", reservation.seat_num);
+        //        });
+        // });
+            // console.log(selectedSeat);
         //  if ( $(this).text() === ) ) {
         //    return;
         //  }
