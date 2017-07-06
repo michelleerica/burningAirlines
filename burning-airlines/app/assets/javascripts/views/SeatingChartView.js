@@ -11,8 +11,8 @@ app.SeatingChartView = Backbone.View.extend({
         var markup = template( this.model.attributes );
         this.$el.html( markup );
         console.log(markup);
-
-        var plane = this.model.attributes
+        var plane = this.model
+        debugger;
         var scv = new app.SeatSchematicView({
             model: plane
         });
