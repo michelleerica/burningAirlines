@@ -25,12 +25,11 @@ app.AppRouter = Backbone.Router.extend({
 
   showFlight: function( id ){
 
-      var flight = app.flights.get( id );
+      var flight = _.findWhere(app.flights, {"id": id} );
       console.log(flight);
       var scv = new app.SeatingChartView({
           model: flight
       });
-      console.log(scv);
       scv.render();
   }
 

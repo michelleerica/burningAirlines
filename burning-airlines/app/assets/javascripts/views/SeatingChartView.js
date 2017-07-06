@@ -10,7 +10,13 @@ app.SeatingChartView = Backbone.View.extend({
     },
 
     render: function(){
-        console.log('hello you guyyyyysss.');
+        var rawTemplate = $('#seatingChart').html();
+        var template = _.template( rawTemplate);
+        // debugger;
+        var markup = template( flight.attributes );
+        this.$el.html( markup );
+        console.log(markup);
+
     },
 
     seatSelection: function(){
